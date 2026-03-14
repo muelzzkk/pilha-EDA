@@ -10,7 +10,7 @@ public class Pilha<T> {
     }
 
 
-    public void empilha(String elemento){
+    public void empilha(T elemento){
         if (this.tamanho < this.elementos.length){
             this.elementos[tamanho] = (T) elemento;
             this.tamanho++;
@@ -52,4 +52,23 @@ public class Pilha<T> {
         sb.append("]");
         return sb.toString();
     }
+
+    // método para inverter a pilha
+    public Pilha<T> inverte(){
+
+        Pilha<T> aux = new Pilha<>(this.elementos.length);
+
+        while (!this.estaVazia()){
+            aux.empilha((T) this.desempilha());
+
+        }
+
+        this.elementos = aux.elementos;
+        this.tamanho = aux.tamanho;
+
+        return aux;
+
+    }
+
+
 }
