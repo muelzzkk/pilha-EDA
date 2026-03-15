@@ -1,6 +1,6 @@
 public class Pilha<T> {
 
-    public T[] elementos;
+    public Object[] elementos;
     public int tamanho;
 
 
@@ -18,14 +18,14 @@ public class Pilha<T> {
     }
 
     public T desempilha(){
-        T temp = elementos[tamanho-1];
+        T temp = (T) elementos[tamanho-1];
         this.elementos[tamanho-1] = null;
         tamanho--;
         return temp;
     }
 
     public T topo(){
-        return this.elementos[tamanho-1];
+        return (T) this.elementos[tamanho-1];
     }
 
     public boolean estaVazia(){
@@ -67,6 +67,23 @@ public class Pilha<T> {
         this.tamanho = aux.tamanho;
 
         return aux;
+    }
+
+    public boolean ehPalindromo(String palavra){
+
+        Pilha<Character> pilha = new Pilha<>(palavra.length());
+
+        for (int i= 0; i < palavra.length(); i++){
+            pilha.empilha(palavra.charAt(i));
+        }
+
+        for (int i= 0; i < palavra.length(); i++){
+            if (palavra.charAt(i) != pilha.desempilha()){
+                return false;
+            }
+        }
+
+        return true;
 
     }
 

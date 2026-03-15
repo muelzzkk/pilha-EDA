@@ -1,0 +1,70 @@
+7. Uma pilha segue o princípio LIFO. Qual alternativa descreve corretamente esse comportamento?
+a) Primeiro que entra é o primeiro que sai
+b) Último que entra é o primeiro que sai
+c) Remoção aleatória
+d) Remoção pelo meio
+
+Resposta: Letra B
+
+8. Sequência: push(A), push(B), push(C), pop(), push(D). Qual o conteúdo final da pilha?
+a) A,B
+b) A,B,C
+c) A,B,D
+d) A,C,D
+
+Resposta: Letra C
+
+
+9. Pilha [A, B, C, D] com D no topo. Após pop(), pop(), push(E), qual o topo?
+a) B
+b) C
+c) D
+d) E
+
+Resposta: Letra D
+
+10. push(1), push(2), push(3), push(4). Após quatro pop(), qual a ordem removida?
+a) 1,2,3,4
+b) 4,3,2,1
+c) 2,3,4,1
+d) 3,4,2,1
+
+Resposta: Letra B
+
+11. Se uma pilha cheia recebe push(), ocorre:
+a) inserção normal
+b) overflow
+c) underflow
+d) substituição do topo
+
+Resposta: Letra B
+
+12. Pilha [A, B]. Após três pop():
+a) nada acontece
+b) reinicia
+c) underflow
+d) duplica
+
+13. Operação que insere elemento no topo:
+a) enqueue
+b) pop
+c) push
+d) dequeue
+
+Resposta: Letra C
+
+14. Operações fundamentais da pilha:
+a) push e pop
+b) enqueue e dequeue
+c) insert e remove
+d) add e delete
+
+Resposta: Letra A
+
+15. Em pilha com vetor, o topo está em qual índice?
+a) 0
+b) tamanho
+c) tamanho − 1
+d) tamanho + 1
+
+Resposta: Letra C
