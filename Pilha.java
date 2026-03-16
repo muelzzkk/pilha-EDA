@@ -11,13 +11,18 @@ public class Pilha<T> {
 
 
     public void empilha(T elemento){
-        if (this.tamanho < this.elementos.length){
-            this.elementos[tamanho] = (T) elemento;
-            this.tamanho++;
+        this.aumentaCapacidade();
+        if (this.tamanho >= this.elementos.length){
+            throw new RuntimeException("Stack Overflow!");
         }
+
+        this.elementos[tamanho++] = elemento;
     }
 
     public T desempilha(){
+        if (this.estaVazia()){
+            throw new RuntimeException("Stack Underflow!");
+        }
         T temp = (T) elementos[tamanho-1];
         this.elementos[tamanho-1] = null;
         tamanho--;
@@ -84,7 +89,17 @@ public class Pilha<T> {
         }
 
         return true;
+    }
 
+
+    public void aumentaCapacidade(){
+        if (this.tamanho == this.elementos.length){
+            T[] novapilha = (T[]) new Object[this.elementos.length * 2];
+            for (int i = 0; i < this.tamanho; i++) {
+                novapilha[i] = (T) this.elementos[i];
+            }
+            this.elementos = novapilha;
+        }
     }
 
 
